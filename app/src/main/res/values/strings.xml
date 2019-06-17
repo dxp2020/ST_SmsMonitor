@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">监听系统</string>
+    <string name="app_is_running">程序正在运行</string>
+</resources>

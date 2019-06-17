@@ -1,0 +1,130 @@
+apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'com.jakewharton.butterknife'
+// 各个组件所使用的基本配置。定义在此。便于对多版本进行统一修改更新
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        multiDexEnabled true
+
+        manifestPlaceholders = [UMENG_CHANNEL_VALUE: "channel_name"]
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath false
+            }
+        }
+
+        flavorDimensions "versionCode"
+    }
+
+    compileOptions {
+        targetCompatibility rootProject.ext.javaVersion
+        sourceCompatibility rootProject.ext.javaVersion
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    lintOptions {
+        disable 'RestrictedApi'
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    aaptOptions {
+        cruncherEnabled = false
+        useNewCruncher = false
+    }
+
+    productFlavors {
+        product {
+            versionNameSuffix ""
+        }
+
+        product_domestic {
+            versionNameSuffix ""
+        }
+
+        develop {
+            versionNameSuffix "_develop"
+        }
+
+        develop_domestic {
+            versionNameSuffix "_develop_domestic"
+        }
+
+        local {
+            versionNameSuffix "_local"
+        }
+
+        local_domestic {
+            versionNameSuffix "_local_domestic"
+        }
+    }
+
+    productFlavors.all { flavor ->
+        flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+}
+
+//configurations.all {
+//    //每隔24小时检查远程依赖是否存在更新
+//    resolutionStrategy.cacheChangingModulesFor 240, 'hours'
+//    //每隔10分钟..
+//    //resolutionStrategy.cacheChangingModulesFor 10, 'minutes'
+//    // 采用动态版本声明的依赖缓存10分钟
+//    resolutionStrategy.cacheDynamicVersionsFor 10*60*10000, 'seconds'
+//}
+
+dependencies {
+    api rootProject.ext.MULALIBS.mula_base
+
+    api rootProject.ext.SUPPORTDEPS.appcompat
+    api rootProject.ext.SUPPORTDEPS.multidex
+    api rootProject.ext.SUPPORTDEPS.recyclerView
+
+    api rootProject.ext.OTHERDEPS.eventbus
+    api rootProject.ext.OTHERDEPS.greendao
+    api rootProject.ext.OTHERDEPS.androidutils
+    api rootProject.ext.OTHERDEPS.rxlifecycle
+    api rootProject.ext.OTHERDEPS.rxlifecycle_components
+    api rootProject.ext.OTHERDEPS.glide
+    api rootProject.ext.OTHERDEPS.retrofit
+    api rootProject.ext.OTHERDEPS.converter_gson
+    api rootProject.ext.OTHERDEPS.adapter_rxjava
+    api rootProject.ext.OTHERDEPS.rxandroid
+    api rootProject.ext.OTHERDEPS.flexlayout
+    api rootProject.ext.OTHERDEPS.flexbox
+    api rootProject.ext.OTHERDEPS.zxing
+    api rootProject.ext.OTHERDEPS.leakcanary
+    
+    api rootProject.ext.MULALIBS.mula_refresh
+    api rootProject.ext.MULALIBS.mula_retrofit
+    api rootProject.ext.MULALIBS.mula_mqtt
+
+    annotationProcessor rootProject.ext.DEVDEPS.butterknifeAnnotationProcessor
+    implementation rootProject.ext.DEVDEPS.butterknifeCompile
+}
+
+//
+//// Mob的MobTools的5月份版本有“当程序抛异常时界面卡死”的bug
+//// Mob的所有依赖包是通过com.mob.sdk管理的，它所有的依赖总会使用最新版本
+//// 所以暂时强制使用4月份版本，当Mob的新版版出来后需要删除此方法
+//configurations.all {
+//    resolutionStrategy {
+//        force "com.mob:MobTools:2018.0419.1211"
+//        force "com.mob:MobCommons:2018.0418.1102"
+//        force "com.mob:MobGUI:2018.0419.1211"
+//    }
+//}

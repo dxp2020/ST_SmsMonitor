@@ -1,0 +1,83 @@
+apply plugin: 'com.jakewharton.butterknife'
+// 各个组件所使用的基本配置。定义在此。便于对多版本进行统一修改更新
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        multiDexEnabled true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath false
+            }
+        }
+
+        flavorDimensions "versionCode"
+    }
+
+    compileOptions {
+        targetCompatibility rootProject.ext.javaVersion
+        sourceCompatibility rootProject.ext.javaVersion
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    lintOptions {
+        disable 'RestrictedApi'
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+//    dexOptions {
+//        javaMaxHeapSize "8g"
+//    }
+
+    aaptOptions {
+        cruncherEnabled = false
+        useNewCruncher = false
+    }
+
+    productFlavors {
+        product {
+            versionNameSuffix ""
+        }
+
+        product_domestic {
+            versionNameSuffix ""
+        }
+
+        develop {
+            versionNameSuffix ""
+        }
+
+        develop_domestic {
+            versionNameSuffix ""
+        }
+
+        local {
+            versionNameSuffix ""
+        }
+
+        local_domestic {
+            versionNameSuffix ""
+        }
+    }
+
+}
+
+dependencies {
+    annotationProcessor rootProject.ext.DEVDEPS.butterknifeAnnotationProcessor
+    implementation rootProject.ext.DEVDEPS.butterknifeCompile
+}

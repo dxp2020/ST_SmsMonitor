@@ -1,0 +1,34 @@
+apply plugin: 'com.android.application'
+apply from: "../gradle_component/baseconfig.gradle"
+
+android {
+
+    signingConfigs {
+        config {
+            keyAlias 'HuoTongTianXia'
+            keyPassword 'HuoTongTianXia2017'
+            storeFile file('./mula.keystore')
+            storePassword 'HuoTongTianXia2017'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            minifyEnabled false
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
