@@ -16,224 +16,242 @@
         app:title_text="监听系统"
         />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
         >
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50sp"
-            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             >
 
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:text="服务器地址:"
-                android:textColor="@color/color_333333"
-                android:textSize="15sp"
-                android:minLines="1"
-                android:gravity="center_vertical"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                />
-
-            <EditText
-                android:id="@+id/et_service_host"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:hint="服务器地址"
-                android:textColor="@color/color_333333"
-                android:textColorHint="@color/color_999999"
-                android:gravity="left|center_vertical"
-                android:layout_weight="1"
-                android:enabled="false"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50sp"
-            android:orientation="horizontal"
-            >
-
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:text="姓名:"
-                android:textColor="@color/color_333333"
-                android:textSize="15sp"
-                android:minLines="1"
-                android:gravity="center_vertical"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                />
-
-            <EditText
-                android:id="@+id/et_username"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:hint="请输入姓名"
-                android:textColor="@color/color_333333"
-                android:textColorHint="@color/color_999999"
-                android:gravity="left|center_vertical"
-                android:layout_weight="1"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50sp"
-            android:orientation="horizontal"
-            >
-
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:text="卡号:"
-                android:textColor="@color/color_333333"
-                android:textSize="15sp"
-                android:minLines="1"
-                android:gravity="center_vertical"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                />
-
-            <EditText
-                android:id="@+id/et_id_card"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:hint="请输入卡号"
-                android:textColor="@color/color_333333"
-                android:textColorHint="@color/color_999999"
-                android:gravity="left|center_vertical"
-                android:layout_weight="1"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50sp"
-            android:orientation="horizontal"
-            >
-
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:text="开户行:"
-                android:textColor="@color/color_333333"
-                android:textSize="15sp"
-                android:minLines="1"
-                android:gravity="center_vertical"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                />
-
-            <EditText
-                android:id="@+id/et_bank"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:hint="请输入开户行"
-                android:textColor="@color/color_333333"
-                android:textColorHint="@color/color_999999"
-                android:gravity="left|center_vertical"
-                android:layout_weight="1"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50sp"
-            android:orientation="horizontal"
-            >
-
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:text="开户支行:"
-                android:textColor="@color/color_333333"
-                android:textSize="15sp"
-                android:minLines="1"
-                android:gravity="center_vertical"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                />
-
-            <EditText
-                android:id="@+id/et_bank_zhi"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:hint="请输入开户支行"
-                android:textColor="@color/color_333333"
-                android:textColorHint="@color/color_999999"
-                android:gravity="left|center_vertical"
-                android:layout_weight="1"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50sp"
-            android:orientation="horizontal"
-            >
-
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:text="本机号码:"
-                android:textColor="@color/color_333333"
-                android:textSize="15sp"
-                android:minLines="1"
-                android:gravity="center_vertical"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                />
-
-            <EditText
-                android:id="@+id/et_phone"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:hint="请输入本机号码"
-                android:textColor="@color/color_333333"
-                android:textColorHint="@color/color_999999"
-                android:gravity="left|center_vertical"
-                android:layout_weight="1"
-                />
-
-        </LinearLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            >
-
-            <TextView
-                android:id="@+id/tv_confirm"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40sp"
-                android:layout_marginLeft="14dp"
-                android:layout_marginRight="14dp"
-                android:layout_marginBottom="30dp"
-                android:background="@drawable/btn_round_bg"
-                android:focusableInTouchMode="false"
-                android:layout_alignParentBottom="true"
-                android:gravity="center"
-                android:text="启动监听"
-                android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:layout_height="50sp"
+                android:orientation="horizontal"
+                >
 
-        </RelativeLayout>
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:text="服务器地址:"
+                    android:textColor="@color/color_333333"
+                    android:textSize="15sp"
+                    android:minLines="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    />
 
-    </LinearLayout>
+                <EditText
+                    android:id="@+id/et_service_host"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:hint="服务器地址"
+                    android:textColor="@color/color_333333"
+                    android:textColorHint="@color/color_999999"
+                    android:gravity="left|center_vertical"
+                    android:layout_weight="1"
+                    android:enabled="false"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:text="姓名:"
+                    android:textColor="@color/color_333333"
+                    android:textSize="15sp"
+                    android:minLines="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    />
+
+                <EditText
+                    android:id="@+id/et_username"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:hint="请输入姓名"
+                    android:textColor="@color/color_333333"
+                    android:textColorHint="@color/color_999999"
+                    android:gravity="left|center_vertical"
+                    android:layout_weight="1"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:text="卡号:"
+                    android:textColor="@color/color_333333"
+                    android:textSize="15sp"
+                    android:minLines="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    />
+
+                <EditText
+                    android:id="@+id/et_id_card"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:hint="请输入卡号"
+                    android:textColor="@color/color_333333"
+                    android:textColorHint="@color/color_999999"
+                    android:gravity="left|center_vertical"
+                    android:layout_weight="1"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:text="开户行:"
+                    android:textColor="@color/color_333333"
+                    android:textSize="15sp"
+                    android:minLines="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    />
+
+                <EditText
+                    android:id="@+id/et_bank"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:hint="请输入开户行"
+                    android:textColor="@color/color_333333"
+                    android:textColorHint="@color/color_999999"
+                    android:gravity="left|center_vertical"
+                    android:layout_weight="1"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:text="开户支行:"
+                    android:textColor="@color/color_333333"
+                    android:textSize="15sp"
+                    android:minLines="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    />
+
+                <EditText
+                    android:id="@+id/et_bank_zhi"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:hint="请输入开户支行"
+                    android:textColor="@color/color_333333"
+                    android:textColorHint="@color/color_999999"
+                    android:gravity="left|center_vertical"
+                    android:layout_weight="1"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:text="本机号码:"
+                    android:textColor="@color/color_333333"
+                    android:textSize="15sp"
+                    android:minLines="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    />
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:hint="请输入本机号码"
+                    android:textColor="@color/color_333333"
+                    android:textColorHint="@color/color_999999"
+                    android:gravity="left|center_vertical"
+                    android:layout_weight="1"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="50dp"
+                android:gravity="center_vertical|left"
+                android:textColor="@color/color_333333"
+                android:text="若需要APP长时间停留在后台运行，请务必做到以下几点\n1、关闭省电模式\n2、开启自启动权限\n3、不要在任务栏杀死应用"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                >
+
+                <TextView
+                    android:id="@+id/tv_confirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="40sp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="14dp"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/btn_round_bg"
+                    android:focusableInTouchMode="false"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:text="启动监听"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

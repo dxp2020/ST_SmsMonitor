@@ -31,14 +31,14 @@ public class SMSManager {
             intentFilter=new IntentFilter();
             intentFilter.addAction(SMSBroadcastReceiver.SMS_RECEIVED_ACTION);
             intentFilter.addAction(SMSBroadcastReceiver.OPPO_SMS_RECEIVED_ACTION);
-        }else{
-            unRegisterReceiver(context);
         }
         context.registerReceiver(smsBroadcastReceiver,intentFilter);
     }
 
     public void unRegisterReceiver(Context context){
         context.unregisterReceiver(smsBroadcastReceiver);
+        smsBroadcastReceiver = null;
+        intentFilter = null;
     }
 
     public static synchronized SMSManager getInstance() {
