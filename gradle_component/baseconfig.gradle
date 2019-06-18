@@ -95,7 +95,6 @@ dependencies {
     api rootProject.ext.SUPPORTDEPS.recyclerView
 
     api rootProject.ext.OTHERDEPS.eventbus
-    api rootProject.ext.OTHERDEPS.greendao
     api rootProject.ext.OTHERDEPS.androidutils
     api rootProject.ext.OTHERDEPS.rxlifecycle
     api rootProject.ext.OTHERDEPS.rxlifecycle_components
@@ -105,26 +104,11 @@ dependencies {
     api rootProject.ext.OTHERDEPS.adapter_rxjava
     api rootProject.ext.OTHERDEPS.rxandroid
     api rootProject.ext.OTHERDEPS.flexlayout
-    api rootProject.ext.OTHERDEPS.flexbox
-    api rootProject.ext.OTHERDEPS.zxing
     api rootProject.ext.OTHERDEPS.leakcanary
     
     api rootProject.ext.MULALIBS.mula_refresh
     api rootProject.ext.MULALIBS.mula_retrofit
-    api rootProject.ext.MULALIBS.mula_mqtt
 
     annotationProcessor rootProject.ext.DEVDEPS.butterknifeAnnotationProcessor
     implementation rootProject.ext.DEVDEPS.butterknifeCompile
 }
-
-//
-//// Mob的MobTools的5月份版本有“当程序抛异常时界面卡死”的bug
-//// Mob的所有依赖包是通过com.mob.sdk管理的，它所有的依赖总会使用最新版本
-//// 所以暂时强制使用4月份版本，当Mob的新版版出来后需要删除此方法
-//configurations.all {
-//    resolutionStrategy {
-//        force "com.mob:MobTools:2018.0419.1211"
-//        force "com.mob:MobCommons:2018.0418.1102"
-//        force "com.mob:MobGUI:2018.0419.1211"
-//    }
-//}

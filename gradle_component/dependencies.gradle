@@ -79,16 +79,11 @@ ext {
     MULALIBS = [
             mula_base          : "com.mula:base:1.1.343",
             mula_photo         : "com.mula:photo:1.0.343",
-            mula_emoj          : "com.mula:emoj:1.0.343",
             mula_imagepreview  : "com.mula:imagepreview:1.0.343",
             mula_lbsloc        : "com.mula:lbsloc:1.0.343",
-            mula_mqtt          : "com.mula:mqtt:1.0.206",
             mula_retrofit      : "com.mula:retrofit:1.0.29",
             mula_refresh       : "com.mula:refresh:1.0.8",
-            mula_changf_refresh: "com.mula:changf_refresh:1.2.14",
-            mula_audiorecord   : "com.mula:audiorecord:1.0.5",
             mula_sublimepicker : "com.mula:sublimepicker:1.0.0",
-            mula_speech        : "com.mula:speech:1.0.0",
             mula_upgrade       : "com.mula:upgrade:1.0.0",
     ]
 
