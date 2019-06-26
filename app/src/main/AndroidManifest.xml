@@ -26,6 +26,7 @@
             android:configChanges="locale"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,17 +38,6 @@
         <service
             android:name=".service.ForegroundService"
             android:exported="false" />
-
-       <!-- <receiver android:name=".receiver.SMSBroadcastReceiver"
-            android:permission="android.permission.BROADCAST_SMS"
-            >
-            &lt;!&ndash; android:priority="1000" 广播事件的优先级-1000到1000 系统默认的短信服务是0&ndash;&gt;
-            <intent-filter android:priority="1000" >
-                <action android:name="android.provider.Telephony.SMS_DELIVER" />
-                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
-                <action android:name="android.provider.OppoSpeechAssist.SMS_RECEIVED" />
-            </intent-filter>
-        </receiver>-->
 
         <activity
             android:name="com.mula.base.activity.CommonActivity"
