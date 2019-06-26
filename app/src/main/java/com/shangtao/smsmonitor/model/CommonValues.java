@@ -1,5 +1,5 @@
 package com.shangtao.smsmonitor.model;
 
 public class CommonValues {
-    public static final String SERVICE_HOST = "http://iot.zero-yun.com/api-app";
+    public static final String SERVICE_HOST = "http://120.79.193.122:8080/";
 }

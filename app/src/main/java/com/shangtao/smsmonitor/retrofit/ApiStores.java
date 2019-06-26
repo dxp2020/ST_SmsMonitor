@@ -11,15 +11,10 @@ import rx.Observable;
 
 public interface ApiStores {
 
-  @GET(CommonValues.SERVICE_HOST +"/data/login")
-  Observable<JsonObject> login(
-          @QueryMap Map<String, Object> params
+  // 获取版本更新信息
+  @GET(CommonValues.SERVICE_HOST +"/api/mid/smsContent/save")
+  Observable<JsonObject> uploadSms(
+          @QueryMap Map<String, String> params
   );
-
-  @GET(CommonValues.SERVICE_HOST +"/data/getSmsCode")
-  Observable<JsonObject> getVerifyCode(
-          @QueryMap Map<String, Object> params
-  );
-
 
 }
